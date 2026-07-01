@@ -10,7 +10,7 @@ _Block Center for Technology & Society, Carnegie Mellon University_
 ## 1 Project Purpose
 This repository provides a reproducible, data-driven assessment of venture-backed artificial-intelligence companies headquartered in Pittsburgh (and peer regions).  The codebase ingests Crunchbase-derived datasets, performs rigorous cleansing and enrichment, and outputs an interactive, publication-ready HTML report suitable for academic and policy analysis.
 
-**Public scope.** The findings published in this repository cover the Pittsburgh metropolitan area only: **133 active AI firms and USD 6.3 B cumulative funding** (July 2025 snapshot), computed by the committed pipeline from Crunchbase-derived datasets (July 2025 snapshot).  In compliance with Crunchbase's Terms of Service, the raw exports are **not redistributed** in this repository (see Section 4); the committed HTML report is the pipeline's verbatim output.  Peer-region data supported the report's peer-city benchmarking section only; no aggregate findings beyond Pittsburgh are published here.
+**Public scope.** The findings published in this repository cover the Pittsburgh metropolitan area only: **133 active AI firms and USD 6.3 B cumulative funding** (July 2025 snapshot), computed by the committed pipeline from Crunchbase-derived datasets.  In compliance with Crunchbase's Terms of Service, the raw exports are **not redistributed** in this repository (see Section 4); the committed HTML report is the pipeline's verbatim output.  Peer-region data supported the report's peer-city benchmarking section only; no aggregate findings beyond Pittsburgh are published here.
 
 ## 2 Repository Structure
 | Path | Description |
