@@ -8,7 +8,7 @@ _Block Center for Technology & Society, Carnegie Mellon University_
 ---
 
 ## 1 Project Purpose
-This repository provides a reproducible, data-driven assessment of venture-backed artificial-intelligence companies headquartered in Pittsburgh (and peer regions).  The codebase ingests Crunchbase-derived datasets, performs rigorous cleansing and enrichment, and outputs an interactive, publication-ready HTML report suitable for academic and policy analysis.
+This repository provides a reproducible, data-driven assessment of venture-backed artificial-intelligence companies headquartered in Pittsburgh (and peer regions).  The codebase ingests Crunchbase-derived datasets, rigorously cleans and enriches them, and outputs an interactive, publication-ready HTML report suitable for academic and policy analysis.
 
 **Public scope.** The findings published in this repository cover the Pittsburgh metropolitan area only: **133 active AI firms and USD 6.3 B cumulative funding** (July 2025 snapshot), computed by the committed pipeline from Crunchbase-derived datasets.  In compliance with Crunchbase's Terms of Service, the raw exports are **not redistributed** in this repository (see Section 4); the committed HTML report is the pipeline's verbatim output.  Peer-region data supported the report's peer-city benchmarking section only; no aggregate findings beyond Pittsburgh are published here.
 
@@ -17,7 +17,7 @@ This repository provides a reproducible, data-driven assessment of venture-backe
 |------|-------------|
 | `comprehensive_pittsburgh_analysis.py` | Core ETL and metric-calculation engine (Pandas + NumPy). |
 | `unified_pittsburgh_report.py` | Orchestrates visual analytics (Plotly + Folium) and compiles the single HTML deliverable. |
-| `Companies-With-Address - Sheet1.csv`, `*.geojson` | Included geo files (hand-geocoded company points; county ZIP polygons).  Raw Crunchbase exports are not included -- see Section 4. |
+| `Companies-With-Address - Sheet1.csv`, `*.geojson` | Included geo files (hand-geocoded company points; county ZIP polygons).  Raw Crunchbase exports are excluded -- see Section 4. |
 | `Pittsburgh_AI_Preliminary_Report.html` | Most recent build of the interactive report (open in any modern browser). |
 
 ## 3 Quick-start (local execution)
@@ -39,18 +39,18 @@ The script regenerates `Pittsburgh_AI_Preliminary_Report.html` in the project ro
 
 > **Note.** Re-running the pipeline end-to-end requires the five raw Crunchbase export files listed in Section 4, which are not redistributed here.  The committed `Pittsburgh_AI_Preliminary_Report.html` is the pipeline's verbatim output; the raw July-2025 snapshot is available on request to the authors for academic verification.
 
-## 4 Data Overview
+## 4 Data Inventory and Availability
 | File | Rows | Key variables | Availability |
 |------|------|---------------|--------------|
-| `all-minus-austin-companies-7-18-2025.csv` | 1 324 | funding $, industry tags, HQ location, founding dates. | not included -- Crunchbase license |
-| `austin-companies-7-18-2025.csv` | 635 | peer-city company universe. | not included -- Crunchbase license |
+| `all-minus-austin-companies-7-18-2025.csv` | 1 324 | funding $, industry tags, HQ location, founding dates. | excluded -- Crunchbase license |
+| `austin-companies-7-18-2025.csv` | 635 | peer-city company universe. | excluded -- Crunchbase license |
 | `Companies-With-Address - Sheet1.csv` | 69 | point geocodes (lat/lon). | included |
-| `funding_transactions_full.csv` | 5 564 | round-level amounts, dates, participant counts. | not included -- Crunchbase license |
-| `investor_profiles_unique (1).csv` | 5 633 | investor meta-data (location, stage focus). | not included -- Crunchbase license |
-| `pittsburgh-schools-7-23-2025.csv` | 68 | university descriptors (alumni, founders). | not included -- Crunchbase license |
+| `funding_transactions_full.csv` | 5 564 | round-level amounts, dates, participant counts. | excluded -- Crunchbase license |
+| `investor_profiles_unique (1).csv` | 5 633 | investor meta-data (location, stage focus). | excluded -- Crunchbase license |
+| `pittsburgh-schools-7-23-2025.csv` | 68 | university descriptors (alumni, founders). | excluded -- Crunchbase license |
 | `Allegheny_County_Zip_Code_Boundaries.geojson` | 110 polygons | ZIP polygons for choropleths. | included (public county GIS) |
 
-**Source: Crunchbase (crunchbase.com), July 2025 snapshot.**  Raw exports are not redistributed in compliance with Crunchbase's Terms of Service; they are available on request to the authors for academic verification.  All processing is local; no external API calls are executed.
+**Source: Crunchbase (crunchbase.com), July 2025 snapshot.**  Raw exports are not redistributed in compliance with Crunchbase's Terms of Service; they are available on request to the authors for academic verification.  All processing runs locally; the pipeline makes no external API calls.
 
 ## 5 Analytical Pipeline (summary)
 1. **Entity normalisation** – deduplicate organisations, coerce monetary strings to floats, harmonise ZIP-codes.
