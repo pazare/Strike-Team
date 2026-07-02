@@ -75,7 +75,7 @@ The codebase is modular and annotation-rich.  Researchers wishing to extend the 
 3. Update unit tests (`pytest`) if you alter core computation functions.  
 4. Document new variables/datasets in this README.
 
-For questions, contact **pzavala@andrew.cmu.edu** or **liufeic@cmu.edu**.
+For questions, contact **pzavalar@andrew.cmu.edu** or **liufeic@cmu.edu**.
 
 ---
 © 2025 Carnegie Mellon University – Released for non-commercial research use. 
